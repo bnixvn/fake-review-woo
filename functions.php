@@ -19,8 +19,8 @@ function update_product_rating($post_id){
 
 	// Kiểm tra xem đã có đánh giá hay chưa
 	if(!get_post_meta($post_id, '_wc_average_rating', true)) {
-		$num = rand(10, 40);
-		$rate = rand_float(4, 5, 10);	// Điểm thấp nhất, điểm cao nhất, số dánh giá
+		$num = rand(10, 40); // số lượt đánh giá
+		$rate = rand_float(4, 5, 10);	// Điểm thấp nhất, điểm cao nhất, thang điểm -> điểm trung bình random
 
 		for ($x = $num; $x >= 0; $x--) {
 			$y = $num - $x;
@@ -51,8 +51,8 @@ function update_rating_old_product(){
     ));
     foreach ($a as $post_id){
 		if(!get_post_meta($post_id,'_wc_average_rating', true)) {
-			$num = rand(10,40);
-			$rate = rand_float(4,5,10);	 // Điểm thấp nhất, điểm cao nhất, số dánh giá
+			$num = rand(10,40); // số lượt đánh giá
+			$rate = rand_float(4,5,10);	 // Điểm thấp nhất, điểm cao nhất, thang điểm -> điểm trung bình random
 
 			for ( $x = $num; $x >= 0; $x-- ) {
 				$y = $num - $x;
