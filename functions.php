@@ -43,7 +43,7 @@ function update_product_rating($post_id){
 }
 
 // Fake cho sản phẩm đã có trên web
-function update_total_sales(){
+function update_rating_old_product(){
     $a = get_posts(array(
         'post_type' => 'product',
         'fields'          => 'ids',
@@ -73,4 +73,4 @@ function update_total_sales(){
 		}
     }
 }
-add_action( 'init','update_total_sales'); // Chạy 5 phút thì xóa hoặc comment dòng này
+add_action( 'init','update_rating_old_product'); // Chạy 5 phút thì xóa hoặc comment dòng này
